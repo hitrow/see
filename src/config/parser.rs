@@ -499,7 +499,7 @@ async fn parse_log<P: AsRef<Path>>(block: &Block, root: P) -> Setting<Logger> {
     log.check(&["mode", "file", "format"], &["mode"], &[]);
 
     let format_ = match log.get("format") {
-        Some(d) => d.to_str(),
+        Some(d) => d.to_source_str(),
         None => default::LOG_FORMAT,
     };
 
